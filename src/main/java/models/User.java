@@ -6,8 +6,11 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
-@Data @NoArgsConstructor @AllArgsConstructor
-@Entity @Table(name = "USER")
+@Data
+@NoArgsConstructor
+@AllArgsConstructor //Lombok
+@Entity
+@Table(name = "USERS") //Hibernate
 public class User {
 
     @Id @GeneratedValue
@@ -30,5 +33,5 @@ public class User {
     private String userEmail;
 
     @Column(name = "USER_ROLE")
-    private String userRole;
+    private int userRole;
 }
