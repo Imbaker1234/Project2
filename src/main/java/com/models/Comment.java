@@ -10,11 +10,11 @@ import javax.persistence.*;
 @AllArgsConstructor //Lombok
 @Entity
 @Table(name = "COMMENTS") //Hibernate
-//@NamedQueries(value = {
-//        @NamedQuery(name = "findCommentById", query = "from COMMENTS c where c.commentId = :id"),
-//        @NamedQuery(name = "findCommentByAuthorId", query = "from COMMENTS c where c.authorId = :id"),
-//        @NamedQuery(name = "findCommentByArtId", query = "from COMMENTS c where c.ObjectId like :address")
-//})
+@NamedQueries(value = {
+        @NamedQuery(name = "findCommentById", query = "from COMMENTS c where c.commentId = :id"),
+        @NamedQuery(name = "findCommentByAuthorId", query = "from COMMENTS c where c.authorId = :id"),
+        @NamedQuery(name = "findCommentByArtId", query = "from COMMENTS c where c.ObjectId like :address")
+})
 public class Comment {
 
     @Id
@@ -27,7 +27,6 @@ public class Comment {
     private int commentArtId; //The ID for the art
 
     @NonNull
-    @OneToOne
     @Column(name = "COMMENT_AUTHOR_ID")
     private int commentAuthorId; //User ID of the author
 
@@ -35,4 +34,8 @@ public class Comment {
     @Column(name = "COMMENT_CONTENT")
     private String commentContent;
 
+
+    public void testMethod() {
+        this.getCommentArtId();
+    }
 }
