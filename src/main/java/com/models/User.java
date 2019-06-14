@@ -24,27 +24,30 @@ public class User {
     private int userID;
 
     @NonNull
-    @Column(name = "USER_NAME")
+    @Column(name = "USER_NAME", unique = true, nullable = false)
     private String userName;
 
     @NonNull
-    @Column(name = "USER_PASS")
+    @Column(name = "USER_PASS", nullable = false)
     private String userPass;
 
     @NonNull
-    @Column(name = "USER_FIRST")
+    @Column(name = "USER_FIRST", nullable = false)
     private String userFirst;
 
     @NonNull
-    @Column(name = "USER_LAST")
+    @Column(name = "USER_LAST", nullable = false)
     private String userLast;
 
     @NonNull
-    @Column(name = "USER_EMAIL")
+    @Column(name = "USER_EMAIL", nullable = false)
     private String userEmail;
 
+    // 1) regular user
+    // 2) artist
+    // 3) moderator
     @NonNull
     @Column(name = "USER_ROLE")
-    private int userRole;
+    private int userRole = 1;
 }
 

@@ -14,11 +14,11 @@ public class UserDAO {
 	public static void main(String[] args) {
 		UserDAO ud = new UserDAO();
 		User log = new User();
-		log.setUserName("Munmu");
-		log.setUserPass("cookiesmilk");
-		log.setUserEmail("phailzpanda@gmail.com");
-		log.setUserFirst("Austin");
-		log.setUserLast("Bark");
+//		log.setUserName("Munmu");
+//		log.setUserPass("cookiesmilk");
+//		log.setUserEmail("phailzpanda@gmail.com");
+//		log.setUserFirst("Austin");
+//		log.setUserLast("Bark");
 		User reg = ud.addUser(log);
 		System.out.println(reg.getUserID());
 		
