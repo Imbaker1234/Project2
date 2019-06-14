@@ -11,10 +11,11 @@ import javax.persistence.*;
 @Entity //Lets Hibernate know that this class is an entity which will be mapped to a DB table.
 @Table(name = "USERS") // Maps this class to the specified table.
 //Specifies a counter sequence for this class.
-@NamedQueries(value = {
-        @NamedQuery(name = "findUserById", query = "from User u where u.userID = :id"),
-        @NamedQuery(name = "findUserByName", query = "from User u where u.USER_NAME = :name, u.USER_PASS = :pass")
+@NamedQueries({
+        @NamedQuery(name="findUserById", query="from User u where u.userID = :id"),
+        @NamedQuery(name="findUserByName", query="from User u where u.userName = :name and u.userPass = :pass")
 })
+
 public class User {
 
     @Id //Specifies a primary key

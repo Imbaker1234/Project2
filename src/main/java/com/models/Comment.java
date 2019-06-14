@@ -10,11 +10,11 @@ import javax.persistence.*;
 @AllArgsConstructor //Lombok
 @Entity
 @Table(name = "COMMENTS") //Hibernate
-@NamedQueries(value = {
-        @NamedQuery(name = "findCommentById", query = "from COMMENTS c where c.commentId = :id"),
-        @NamedQuery(name = "findCommentByAuthorId", query = "from COMMENTS c where c.authorId = :id"),
-        @NamedQuery(name = "findCommentByArtId", query = "from COMMENTS c where c.ObjectId like :address")
-})
+//@NamedQueries(value = {
+//        @NamedQuery(name="findCommentById", query="from COMMENTS c where c.commentId = :id"),
+//        @NamedQuery(name="findCommentByAuthorId", query="from COMMENTS c where c.authorId = :id"),
+//        @NamedQuery(name="findCommentByArtId", query="from COMMENTS c where c.ObjectId like :address")
+//})
 public class Comment {
 
     @Id
