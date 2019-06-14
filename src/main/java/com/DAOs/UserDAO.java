@@ -12,18 +12,18 @@ import com.util.HibernateUtil;
 
 public class UserDAO {
 	
-	public static void main(String[] args) {
-		UserDAO ud = new UserDAO();
-		User log = new User();
-		log.setUserName("Yogi");
-		log.setUserPass("mleh");
-		log.setUserEmail("whouseshotmail@hotmail.com");
-		log.setUserFirst("Rawr");
-		log.setUserLast("Bjork");
-		User reg = ud.addUser(log);
-		System.out.println(reg.getUserID());
-		
-	}
+//	public static void main(String[] args) {
+//		UserDAO ud = new UserDAO();
+//		User log = new User();
+//		log.setUserName("Yogi");
+//		log.setUserPass("mleh");
+//		log.setUserEmail("whouseshotmail@hotmail.com");
+//		log.setUserFirst("Rawr");
+//		log.setUserLast("Bjork");
+//		User reg = ud.addUser(log);
+//		System.out.println(reg.getUserID());
+//		
+//	}
 	
 	// Login functionality
 	public User getUserByCredentials(User logged) {
