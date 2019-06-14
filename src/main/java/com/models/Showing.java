@@ -14,7 +14,8 @@ import javax.persistence.*;
 @NamedQueries({
         @NamedQuery(name="findShowById", query="from SHOWS s where s.showId = :id"),
         @NamedQuery(name="findShowByHostId", query="from SHOWS s where s.hostId = :id"),
-        @NamedQuery(name="findShowByPlace", query="from SHOWS s where s.place like :address")
+        @NamedQuery(name="findShowByPlace", query="from SHOWS s where s.place like :address"),
+        @NamedQuery(name="findAllShows", query="from SHOWS s")
 })
 
 public class Showing {
