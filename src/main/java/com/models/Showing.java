@@ -11,11 +11,11 @@ import javax.persistence.*;
 @AllArgsConstructor
 @Entity
 @Table(name = "SHOWS")
-//@NamedQueries({
-//        @NamedQuery(name="findShowById", query="from SHOWS s where s.showId = :id"),
-//        @NamedQuery(name="findShowByHostId", query="from SHOWS s where s.hostId = :id"),
-//        @NamedQuery(name="findShowByPlace", query="from SHOWS s where s.place like :address")
-//})
+@NamedQueries({
+        @NamedQuery(name="findShowById", query="from SHOWS s where s.showId = :id"),
+        @NamedQuery(name="findShowByHostId", query="from SHOWS s where s.hostId = :id"),
+        @NamedQuery(name="findShowByPlace", query="from SHOWS s where s.place like :address")
+})
 
 public class Showing {
 
