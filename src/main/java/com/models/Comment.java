@@ -34,8 +34,8 @@ public class Comment {
     @Column(name = "COMMENT_CONTENT")
     private String commentContent;
 
-
-    public void testMethod() {
-        this.getCommentArtId();
+    public void test() {
+    	this.getCommentAuthorId();
     }
+ 
 }
