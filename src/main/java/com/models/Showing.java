@@ -11,7 +11,7 @@ import javax.persistence.*;
 @AllArgsConstructor
 @Entity
 @Table(name = "SHOWS")
-//@NamedQueries(value = {
+//@NamedQueries({
 //        @NamedQuery(name="findShowById", query="from SHOWS s where s.showId = :id"),
 //        @NamedQuery(name="findShowByHostId", query="from SHOWS s where s.hostId = :id"),
 //        @NamedQuery(name="findShowByPlace", query="from SHOWS s where s.place like :address")
@@ -33,6 +33,8 @@ public class Showing {
     String time; //Date of the event
 
     @NonNull
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "USER_ID")
     @Column(name = "SHOW_HOST_ID")
     int hostId; //the UserId of the hosting artist
 
