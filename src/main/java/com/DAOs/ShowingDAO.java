@@ -1,5 +1,9 @@
 package com.DAOs;
 
+import java.util.List;
+
+import javax.persistence.Query;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
@@ -35,5 +39,31 @@ public class ShowingDAO {
 	}
 	
 	// Read showing
+	public List<Showing> getAllShowing() {
+		
+		// Initialize a return variable
+		List<Showing> allShowing = null;
+		
+		// Obtain SessionFactory
+		try (SessionFactory factory = HibernateUtil.getSessionFactory();
+				// Obtain a session
+				Session session = factory.getCurrentSession()) {
+		
+			// Begin transaction
+			session.beginTransaction();
+			
+			// Get the NamedQuery
+			Query query = session.getNamedQuery("findAllShows");
+		
+			// Run query
+			allShowing = query.getResultList();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return allShowing;
+		
+	}
 
 }
