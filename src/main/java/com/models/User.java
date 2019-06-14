@@ -40,7 +40,7 @@ public class User {
     private String userLast;
 
     @NonNull
-    @Column(name = "USER_EMAIL", nullable = false)
+    @Column(name = "USER_EMAIL", unique = true, nullable = false)
     private String userEmail;
 
     // 1) regular user
