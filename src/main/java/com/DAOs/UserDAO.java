@@ -19,6 +19,7 @@ public class UserDAO {
 		// Get the named query 
 		Query query = session.createNamedQuery("findUserByName");
 		query.setParameter("name", logged.getUserName());
+		query.setParameter("pass", logged.getUserPass());
 		
 		// Run query and get the result set
 		List<User> loggedIn = query.getResultList();
