@@ -38,7 +38,7 @@ public class ShowingDAO {
 		
 	}
 	
-	// Read showing
+	// Get all showings
 	public List<Showing> getAllShowing() {
 		
 		// Initialize a return variable
@@ -64,6 +64,35 @@ public class ShowingDAO {
 		
 		return allShowing;
 		
+	}
+	
+	// Get showing by id
+	public List<Showing> getShowingById(Showing showing) {
+		
+		// Initialize a return variable
+		List<Showing> allIdShowing = null;
+		
+		// Obtain SessionFactory
+		try (SessionFactory factory = HibernateUtil.getSessionFactory();
+				// Obtain a session
+				Session session = factory.getCurrentSession()) {
+			
+			// Begin transaction
+			session.beginTransaction();
+			
+			// Get the named query
+			Query query = session.getNamedQuery("findShowById");
+			query.setParameter("id", showing.getShowId());
+			
+			// Run the query
+			allIdShowing = query.getResultList();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		// Return the result
+		return allIdShowing;
 	}
 
 }
