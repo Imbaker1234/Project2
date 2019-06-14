@@ -13,7 +13,7 @@ import javax.persistence.*;
 //Specifies a counter sequence for this class.
 @NamedQueries(value = {
         @NamedQuery(name = "findUserById", query = "from User u where u.userID = :id"),
-        @NamedQuery(name = "findUserByName", query = "from User u where u.userName = :name")
+        @NamedQuery(name = "findUserByName", query = "from User u where u.USER_NAME = :name, u.USER_PASS = :pass")
 })
 public class User {
 
