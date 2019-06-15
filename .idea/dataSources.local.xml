@@ -11,9 +11,5 @@
       <user-name>Imbaker1234</user-name>
       <introspection-schemas>*:IMBAKER1234</introspection-schemas>
     </data-source>
-    <data-source name="hibernate.cfg.xml/Hibernate" uuid="c3ced9bf-34b9-4335-88ad-b2c50c285e37">
-      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="ORACLE" exact-version="0" />
-      <user-name>Imbaker1234</user-name>
-    </data-source>
   </component>
 </project>
