@@ -109,8 +109,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/buildspec.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="9" column="115" lean-forward="true" selection-start-line="9" selection-start-column="115" selection-end-line="9" selection-end-column="115" />
+            <state relative-caret-position="160">
+              <caret line="10" column="16" lean-forward="true" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -462,6 +462,10 @@
               <item name="Project2-Java-API" type="462c0819:PsiDirectoryNode" />
               <item name="target" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="p2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -630,7 +634,7 @@
       <workItem from="1560475755191" duration="231000" />
       <workItem from="1560476148512" duration="3012000" />
       <workItem from="1560517264340" duration="3316000" />
-      <workItem from="1560522940552" duration="13510000" />
+      <workItem from="1560522940552" duration="14415000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit&#10;&#10;Basic Package Structure. All dependencies added to POM.">
       <created>1560058022015</created>
@@ -695,11 +699,25 @@
       <option name="project" value="LOCAL" />
       <updated>1560616171492</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Updated project to support Code Pipeline. Moved OJDBC JAR to root and changed pathing in YAML altogether.&#10;&#10;Attempt 6">
+      <created>1560616907759</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1560616907759</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Updated project to support Code Pipeline. Moved OJDBC JAR to root and changed pathing in YAML altogether.&#10;&#10;Attempt 7">
+      <created>1560617404388</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1560617404388</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="94992000" />
+    <option name="totallyTimeSpent" value="95897000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -708,7 +726,7 @@
       <window_info id="aws.explorer" order="0" sideWeight="0.50141644" side_tool="true" weight="0.12483221" />
       <window_info id="Web" order="1" side_tool="true" />
       <window_info id="Persistence" order="2" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="3" sideWeight="0.49858356" visible="true" weight="0.24026845" />
+      <window_info content_ui="combo" id="Project" order="3" sideWeight="0.49858356" visible="true" weight="0.24026845" />
       <window_info id="Structure" order="4" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="5" />
       <window_info id="Image Layers" order="6" />
@@ -727,12 +745,12 @@
       <window_info anchor="bottom" id="Cvs" order="6" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="7" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="8" />
-      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.296034" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.296034" />
       <window_info anchor="bottom" id="Docker" order="10" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="bottom" id="Database Changes" order="12" />
       <window_info anchor="bottom" id="Version Control" order="13" weight="0.3286119" />
-      <window_info anchor="bottom" id="Phaser Chains" order="14" />
+      <window_info anchor="bottom" id="Phaser Chains" order="14" weight="0.3286119" />
       <window_info anchor="bottom" id="Database Console" order="15" weight="0.3286119" />
       <window_info anchor="bottom" id="Spring" order="16" />
       <window_info anchor="right" id="CDI" order="0" />
@@ -803,7 +821,9 @@
     <MESSAGE value="Updated project to support Code Pipeline&#10;&#10;Attempt 3" />
     <MESSAGE value="Updated project to support Code Pipeline&#10;&#10;Attempt 4" />
     <MESSAGE value="Updated project to support Code Pipeline. Moved OJDBC JAR to root and changed pathing in YAML altogether.&#10;&#10;Attempt 5" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated project to support Code Pipeline. Moved OJDBC JAR to root and changed pathing in YAML altogether.&#10;&#10;Attempt 5" />
+    <MESSAGE value="Updated project to support Code Pipeline. Moved OJDBC JAR to root and changed pathing in YAML altogether.&#10;&#10;Attempt 6" />
+    <MESSAGE value="Updated project to support Code Pipeline. Moved OJDBC JAR to root and changed pathing in YAML altogether.&#10;&#10;Attempt 7" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated project to support Code Pipeline. Moved OJDBC JAR to root and changed pathing in YAML altogether.&#10;&#10;Attempt 7" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -1046,8 +1066,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/buildspec.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="9" column="115" lean-forward="true" selection-start-line="9" selection-start-column="115" selection-end-line="9" selection-end-column="115" />
+        <state relative-caret-position="160">
+          <caret line="10" column="16" lean-forward="true" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="16" />
         </state>
       </provider>
     </entry>
