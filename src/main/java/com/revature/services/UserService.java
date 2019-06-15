@@ -34,5 +34,15 @@ public class UserService {
 		return ur.register(user);
 		
 	}
+	
+	@Transactional
+	public User login(User user) {
+		User loggedIn = ur.getByCredentials(user);
+		if (loggedIn == null) {
+			return null;
+		} else {
+			return loggedIn;
+		}
+	}
 
 }
