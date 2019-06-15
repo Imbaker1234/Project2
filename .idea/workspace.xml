@@ -6,13 +6,11 @@
     </artifacts-to-build>
   </component>
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/src/main/java/com/models/Showing.java" description="        @NamedQuery(name = &quot;findShowById&quot;, query =..." line="18" />
     <bookmark url="file://$PROJECT_DIR$/src/main/java/com/models/Comment.java" description="@Data @NoArgsConstructor @AllArgsConstructor //Lom..." line="10" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2197d1bc-67fa-426c-8ab9-520e9ba94197" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/buildspec.yml" beforeDir="false" afterPath="$PROJECT_DIR$/buildspec.yml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -88,8 +86,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/buildspec.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="368">
-              <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+            <state relative-caret-position="256">
+              <caret line="16" column="22" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -111,8 +109,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="353">
-              <caret line="165" selection-start-line="165" selection-end-line="165" />
+            <state relative-caret-position="192">
+              <caret line="113" column="40" lean-forward="true" selection-start-line="113" selection-start-column="40" selection-end-line="113" selection-end-column="40" />
             </state>
           </provider>
         </entry>
@@ -604,7 +602,7 @@
       <workItem from="1560475755191" duration="231000" />
       <workItem from="1560476148512" duration="3012000" />
       <workItem from="1560517264340" duration="3316000" />
-      <workItem from="1560522940552" duration="19963000" />
+      <workItem from="1560522940552" duration="20456000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit&#10;&#10;Basic Package Structure. All dependencies added to POM.">
       <created>1560058022015</created>
@@ -732,20 +730,33 @@
       <option name="project" value="LOCAL" />
       <updated>1560627395899</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="mvn idea::idea">
+      <created>1560627963965</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1560627963965</updated>
+    </task>
+    <task id="LOCAL-00020" summary="mvn idea::idea">
+      <created>1560628093533</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1560628093533</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="101445000" />
+    <option name="totallyTimeSpent" value="101938000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="aws.explorer" order="0" sideWeight="0.50141644" side_tool="true" weight="0.12483221" />
       <window_info id="Web" order="1" sideWeight="0.50141644" side_tool="true" weight="0.24026845" />
       <window_info id="Persistence" order="2" sideWeight="0.50141644" side_tool="true" weight="0.24026845" />
-      <window_info active="true" content_ui="combo" id="Project" order="3" sideWeight="0.49858356" visible="true" weight="0.24026845" />
+      <window_info content_ui="combo" id="Project" order="3" sideWeight="0.49858356" visible="true" weight="0.24026845" />
       <window_info id="Structure" order="4" sideWeight="0.50141644" side_tool="true" weight="0.24026845" />
       <window_info id="Designer" order="5" />
       <window_info id="Image Layers" order="6" />
@@ -764,7 +775,7 @@
       <window_info anchor="bottom" id="Cvs" order="6" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="7" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="8" />
-      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.296034" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.296034" />
       <window_info anchor="bottom" id="Docker" order="10" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="bottom" id="Database Changes" order="12" weight="0.3286119" />
@@ -847,7 +858,8 @@
     <MESSAGE value="Attempting without the jar unpacking&#10;Attempt 10" />
     <MESSAGE value="Attempt 11" />
     <MESSAGE value="Attempt 12" />
-    <option name="LAST_COMMIT_MESSAGE" value="Attempt 12" />
+    <MESSAGE value="mvn idea::idea" />
+    <option name="LAST_COMMIT_MESSAGE" value="mvn idea::idea" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -1097,15 +1109,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="353">
-          <caret line="165" selection-start-line="165" selection-end-line="165" />
+        <state relative-caret-position="192">
+          <caret line="113" column="40" lean-forward="true" selection-start-line="113" selection-start-column="40" selection-end-line="113" selection-end-column="40" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/buildspec.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+        <state relative-caret-position="256">
+          <caret line="16" column="22" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
         </state>
       </provider>
     </entry>

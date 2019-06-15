@@ -15,7 +15,7 @@ phases:
   build:
     commands:
       - mvn idea::idea
-      - mv target/Project-2-API-1.war ./Project-2-API-1.war
+#      - mv target/Project-2-API-1.war ./Project-2-API-1.war
 
 artifacts:
   files:
