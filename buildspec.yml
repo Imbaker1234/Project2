@@ -19,5 +19,5 @@ phases:
 
 artifacts:
   files:
-    - Project-2-API-1.war
+    - target/Project-2-API-1.war
     - .ebextensions/**/*
