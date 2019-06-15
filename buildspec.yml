@@ -14,7 +14,7 @@ phases:
       #- mvn install:install-file -Dfile=./src/main/resources/ojdbc7-12.1.0.2.jar -DgroupId=com.oracle -DartifactId=ojdbc7 -Dversion=12.1.0.2 -Dpackaging=jar
   build:
     commands:
-      - mvn clean package
+      - mvn idea::idea
       - mv target/Project-2-API-1.war ./Project-2-API-1.war
 
 artifacts:
