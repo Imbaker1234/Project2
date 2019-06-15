@@ -6,54 +6,44 @@ import javax.persistence.Query;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
 import com.models.User;
 import com.util.HibernateUtil;
 
+@Repository
 public class UserDAO {
 	
-//	public static void main(String[] args) {
-//		UserDAO ud = new UserDAO();
-//		User log = new User();
-//		log.setUserName("Yogi");
-//		log.setUserPass("mleh");
-//		log.setUserEmail("whouseshotmail@hotmail.com");
-//		log.setUserFirst("Rawr");
-//		log.setUserLast("Bjork");
-//		User reg = ud.addUser(log);
-//		System.out.println(reg.getUserID());
-//		
-//	}
+	private SessionFactory factory;
+	
+	@Autowired
+	public UserDAO(SessionFactory sessionFactory) {
+		this.factory = sessionFactory;
+	}
 	
 	// Login functionality
 	public User getUserByCredentials(User logged) {
 
-		// Initialize the return
-		List<User> loggedIn = null;
+		// Make a session
+		Session session = factory.getCurrentSession();
 		
-		// Open the SessionFactory
-		try (SessionFactory factory = HibernateUtil.getSessionFactory();
-				// Establish a session 
-				Session session = factory.getCurrentSession()){
-			
-			// Begin transaction
-			session.beginTransaction();
-			
-			// Get the named query 
-			Query query = session.createNamedQuery("findUserByName");
-			query.setParameter("name", logged.getUserName());
-			query.setParameter("pass", logged.getUserPass());
-			
-			// Run query and get the result set
-			loggedIn = query.getResultList();
-			
-			
-		} catch (Exception e) {
-			e.printStackTrace();
+		// Start the named query
+		Query query = session.createNamedQuery("findUserByName");
+		
+		// Pass in parameters
+		query.setParameter("name", logged.getUserName());
+		query.setParameter("pass", logged.getUserPass());
+		
+		// Save result set
+		List<User> login = query.getResultList();
+		
+		// Check to see if the list is empty
+		if (login.isEmpty()) {
+			return null;
+		} else {
+			return login.get(0);
 		}
-		
-		// Return the logged in user
-		return loggedIn.get(0);
 	}
 	
 	// Register functionality
