@@ -19,5 +19,5 @@ phases:
 
 artifacts:
   files:
-    - aws-ci-cd-demo-0.0.1-SNAPSHOT.war
-    - .ebextensions/**/*
+    - Project-2-API-1.war
+#    - .ebextensions/**/*
