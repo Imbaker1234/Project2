@@ -2,9 +2,13 @@ package com.models;
 
 
 import lombok.*;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
 
 import javax.persistence.*;
 
+@Component("myShowing")
+@Scope("singleton")
 @Data
 @NoArgsConstructor
 @RequiredArgsConstructor

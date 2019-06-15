@@ -1,9 +1,13 @@
 package com.models;
 
 import lombok.*;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
 
 import javax.persistence.*;
 
+@Component("myComment")
+@Scope("singleton")
 @Data
 @NoArgsConstructor
 @RequiredArgsConstructor
@@ -35,7 +39,7 @@ public class Comment {
     private String commentContent;
 
     public void test() {
-    	this.getCommentAuthorId();
+        this.getCommentAuthorId();
     }
- 
+
 }
