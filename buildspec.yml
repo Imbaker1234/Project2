@@ -1,0 +1,19 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      java: openjdk8
+  pre_build:
+    commands:
+      - echo Build started on `date`
+      - mvn install:install-file -Dfile=./src/main/resources/ojdbc7-11.2.0.jar -DgroupId=com.oracle -DartifactId=ojdbc7 -Dversion=11.2.0 -Dpackaging=jar
+  build:
+    commands:
+      - mvn clean package
+      - mv target/project2-art-0.0.1-SNAPSHOT.war ./project2-art-0.0.1-SNAPSHOT.war
+
+artifacts:
+  files:
+    - project2-art-0.0.1-SNAPSHOT.war
+    - .ebextensions/**/*
