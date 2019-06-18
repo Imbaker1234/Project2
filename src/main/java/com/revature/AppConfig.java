@@ -88,7 +88,7 @@ public class AppConfig implements WebMvcConfigurer, WebApplicationInitializer{
 	// Bean for the TransactionManager
 	@Bean
 	public PlatformTransactionManager hibernateTransactionManager() {
-		System.out.println("Creatig PlatformTransactionManager bean...");
+		System.out.println("Creating PlatformTransactionManager bean...");
 		
 		// Create a new instance of HibernateTransactionManager
 		HibernateTransactionManager transactionManager = new HibernateTransactionManager();
