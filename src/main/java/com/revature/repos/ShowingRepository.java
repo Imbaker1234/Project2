@@ -1,5 +1,7 @@
 package com.revature.repos;
 
+import java.util.List;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -46,6 +48,11 @@ public class ShowingRepository {
 		
 		// Return the updated card back
 		return updateShow;
+	}
+	
+	// Get all showings
+	public List<Showing> getAll(){
+		return factory.getCurrentSession().createQuery("from Showing", Showing.class).getResultList();
 	}
 	
 }

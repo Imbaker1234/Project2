@@ -1,7 +1,10 @@
 package com.revature.services;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Isolation;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -29,6 +32,12 @@ public class ShowingService {
 	public Showing update(Showing updateShow) {
 		if (updateShow.getShowStatusId() == 0) return null;
 		return sr.updateShow(updateShow);
+	}
+	
+	// Get all shows
+	@Transactional(readOnly=true, isolation=Isolation.READ_COMMITTED)
+	public List<Showing> getAll(){
+		return sr.getAll();
 	}
 	
 }

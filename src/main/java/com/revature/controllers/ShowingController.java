@@ -1,8 +1,12 @@
 package com.revature.controllers;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -26,7 +30,7 @@ public class ShowingController {
 		this.ss = showingService;
 	}
 	
-	@PostMapping(value="/comment", consumes=MediaType.APPLICATION_JSON_VALUE, produces=MediaType.APPLICATION_JSON_VALUE)
+	@PostMapping(consumes=MediaType.APPLICATION_JSON_VALUE, produces=MediaType.APPLICATION_JSON_VALUE)
 	@ResponseStatus(HttpStatus.CREATED)
 	public Showing addShow(@RequestBody Showing newShow) {
 		return ss.addShow(newShow);		
@@ -39,6 +43,13 @@ public class ShowingController {
 		return show;
 	}
 	
+	@GetMapping(produces=MediaType.APPLICATION_JSON_VALUE)
+	public List<Showing> getAllShows(){
+		return this.ss.getAll();
+	}
+	
+	@ExceptionHandler
+	@ResponseStatus(HttpStatus.NOT_FOUND)
 	public ShowErrorResponse handleNotFoundException(ShowNotFoundException e) {
 		ShowErrorResponse error = new ShowErrorResponse();
 		error.setStatus(HttpStatus.NOT_FOUND.value());

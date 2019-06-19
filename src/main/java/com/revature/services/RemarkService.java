@@ -1,7 +1,10 @@
 package com.revature.services;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Isolation;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.revature.models.Remark;
@@ -32,6 +35,12 @@ public class RemarkService {
 	@Transactional
 	public boolean deleteRemark(int id) {
 		return rr.delete(id);
+	}
+	
+	// Get all by artId
+	@Transactional(readOnly=true, isolation=Isolation.READ_COMMITTED)
+	public List<Remark> getAllByArtId(int artId) {
+		return this.rr.getRemarksByArtId(artId);
 	}
 	
 }

@@ -4,8 +4,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.ExceptionHandler;
-import org.springframework.web.bind.annotation.PatchMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,32 +16,28 @@ import com.revature.models.UserErrorResponse;
 import com.revature.services.UserService;
 
 @RestController
-@RequestMapping("/user")
-public class UserController {
+@RequestMapping("/auth")
+public class AuthController {
 
 	private UserService us;
 	
 	@Autowired
-	public UserController (UserService userService) {
+	public AuthController(UserService userService) {
 		this.us = userService;
 	}
 	
-	// Http post request, end point is on register and take in a json and sends out a json
 	@PostMapping(consumes=MediaType.APPLICATION_JSON_VALUE, produces=MediaType.APPLICATION_JSON_VALUE)
-	// changes the response status to 201
-	@ResponseStatus(HttpStatus.CREATED)
-	public User register(@RequestBody User newUser) {
-		System.out.println(newUser);
-		return us.register(newUser);		
-	}
-	
-	// Add Heart
-	@PatchMapping(value="/{id}")
-	public String addHeart(@PathVariable("id") String addHeart) {
-		return null;
-		// take in added id
-		// pass it to the user service
+	public User login(@RequestBody User cred) {
 		
+		// Set a variable to be the return of the object
+		User log = us.login(cred);
+		
+		// Check to see if the return object is null or not
+		if (log == null) {
+			throw new UserNotFoundException("No user with the username: " + cred.getUserUsername() + ", exists");
+		} else {
+			return log;
+		}
 	}
 	
 	@ExceptionHandler
@@ -55,5 +49,4 @@ public class UserController {
 		error.setTimestamp(System.currentTimeMillis());
 		return error;
 	}
-	
 }

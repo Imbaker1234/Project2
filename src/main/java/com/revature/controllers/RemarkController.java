@@ -1,9 +1,13 @@
 package com.revature.controllers;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -43,6 +47,14 @@ public class RemarkController {
 		return deleted;
 	}
 	
+	// Get remark by ArtId
+	@GetMapping(value="/{artId}", produces=MediaType.APPLICATION_JSON_VALUE)
+	public List<Remark> getRemarksByArtId(@PathVariable int artId) {
+		return this.rs.getAllByArtId(artId);
+	}
+	
+	@ExceptionHandler
+	@ResponseStatus(HttpStatus.NOT_FOUND)
 	public RemarkErrorResponse handleNotFoundException(RemarkNotFoundException e) {
 		RemarkErrorResponse error = new RemarkErrorResponse();
 		error.setStatus(HttpStatus.NOT_FOUND.value());

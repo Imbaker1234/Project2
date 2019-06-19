@@ -56,6 +56,9 @@ public class User {
 	@Column(name = "user_email", unique = true, nullable = false)
 	private String userEmail;
 	
+	@Column(name = "user_hearts")
+	private String hearts;
+	
 	@Column(name = "user_role")
 	private int userRole = 1;
 

@@ -7,6 +7,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
@@ -23,6 +25,9 @@ import lombok.RequiredArgsConstructor;
 @AllArgsConstructor
 @Entity
 @Table(name="REMARKS")
+@NamedQueries({
+	@NamedQuery(name="findRemarksByArtId", query="from Remark r where r.remarkArtId = :id")
+})
 @SequenceGenerator(name="remark_seq", sequenceName="remark_seq", allocationSize=1)
 public class Remark {
 	

@@ -1,5 +1,9 @@
 package com.revature.repos;
 
+import java.util.List;
+
+import javax.persistence.Query;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,6 +45,16 @@ public class RemarkRepository {
 		session.delete(toDelete);
 		return true;
 		
+	}
+	
+	// Get remarks by artId
+	public List<Remark> getRemarksByArtId(int artId) {
+		
+		// Create a query finding all the remarks where they have the given artId
+		Query query = factory.getCurrentSession().createQuery("from Remark r where r.remarkArtId = :id");
+		query.setParameter("id", artId);
+		List<Remark> remarks = query.getResultList();
+		return remarks;
 	}
 
 }
