@@ -10,7 +10,7 @@ import io.jsonwebtoken.SignatureAlgorithm;
 
 public class JwtGenerator {
 	
-	private static String createJwt(User subject) {
+	public static String createJwt(User subject) {
 		
 		// The Jwt Signature Algorithm used to sign the token
 		SignatureAlgorithm sigAlg = SignatureAlgorithm.HS256;
