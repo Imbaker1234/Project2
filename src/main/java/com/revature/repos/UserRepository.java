@@ -53,4 +53,35 @@ public class UserRepository {
 		}
 	}
 	
+	// Update user with new hearts
+	public User updateUser(User currentUser) {
+		
+		// Make a new session
+		Session session = factory.getCurrentSession();
+		
+		// Get the current user from the database, and save it in a user object
+		User update = session.get(User.class, currentUser.getUserId());
+		
+		// Check to see if the retrieved user exists
+		if (update == null) return null;
+		
+		// Save the updated values
+		update.setUserId(currentUser.getUserId());
+		update.setUserUsername(currentUser.getUserUsername());
+		update.setUserPassword(currentUser.getUserPassword());
+		update.setUserFirstname(currentUser.getUserFirstname());
+		update.setUserLastname(currentUser.getUserLastname());
+		update.setUserRole(currentUser.getUserRole());
+		update.setUserEmail(currentUser.getUserEmail());
+		update.setHearts(currentUser.getHearts());
+		
+		// Return the updated user
+		return update;
+	}
+	
+	// Get user by id
+	public User getById(int id) {
+		return factory.getCurrentSession().get(User.class, id);
+	}
+	
 }

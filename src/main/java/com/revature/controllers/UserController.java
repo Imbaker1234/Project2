@@ -1,5 +1,7 @@
 package com.revature.controllers;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -13,6 +15,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.revature.exceptions.UserNotFoundException;
+import com.revature.models.Principal;
 import com.revature.models.User;
 import com.revature.models.UserErrorResponse;
 import com.revature.services.UserService;
@@ -39,11 +42,34 @@ public class UserController {
 	
 	// Add Heart
 	@PatchMapping(value="/{id}")
-	public String addHeart(@PathVariable("id") String addHeart) {
-		return null;
-		// take in added id
-		// pass it to the user service
+	public User addHeart(@PathVariable("id") String addHeart, HttpServletRequest request) {
 		
+		// Save the token to a principal object
+		Principal principal = (Principal) request.getAttribute("principal");
+		
+		// Get the user based on id
+		User currentUser = us.getUserById(principal.getId());
+		
+		// Grab hearts list
+		String hearts = currentUser.getHearts();
+
+		// Initialize updatedHearts
+		String updatedHearts;
+		// Add new heart to list, if the first thing is null then set the heart to the first
+		if (hearts == null) {
+			updatedHearts = addHeart;
+		} else {
+			updatedHearts = hearts + "," + addHeart;
+		}
+		
+		// Set the updatedHearts to the current user's hearts
+		currentUser.setHearts(updatedHearts);
+		
+		// Update the current user
+		User addedHeart = us.addHeart(currentUser);
+		
+		// Return the updated user
+		return addedHeart;
 	}
 	
 	@ExceptionHandler

@@ -47,6 +47,11 @@ public class ShowingController {
 			throw new UserNotValidException("User not valid");
 		}
 		
+		// If principal's role 
+		if (principal.getRole() != 2) {
+			throw new UserNotValidException("User not valid");
+		}
+		
 		return ss.addShow(newShow);		
 	}
 	

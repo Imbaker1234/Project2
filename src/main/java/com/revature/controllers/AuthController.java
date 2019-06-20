@@ -32,7 +32,7 @@ public class AuthController {
 	}
 	
 	@PostMapping(consumes=MediaType.APPLICATION_JSON_VALUE, produces=MediaType.APPLICATION_JSON_VALUE)
-	public Principal login(@RequestBody User cred, HttpServletResponse response) {
+	public User login(@RequestBody User cred, HttpServletResponse response) {
 		
 		// Set a variable to be the return of the object
 		User log = us.login(cred);
@@ -42,20 +42,14 @@ public class AuthController {
 			throw new UserNotFoundException("No user with the username: " + cred.getUserUsername() + ", exists");
 		} else {
 
-			// Save the retrieved values into a principal object
-			Principal principal = new Principal();
-			principal.setId(log.getUserId());
-			principal.setUsername(log.getUserUsername());
-			principal.setRole(log.getUserRole());
-			
 			// Generate Jwt
 			String token = JwtGenerator.createJwt(log);
 			
 			// Add the token into the response header
 			response.addHeader(JwtConfig.HEADER, JwtConfig.PREFIX + token);
 			
-			// Return the principal in the body of the response
-			return principal;
+			// Return the User in the body of the response
+			return log;
 		}
 	}
 	

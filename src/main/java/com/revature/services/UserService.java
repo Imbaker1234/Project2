@@ -47,11 +47,14 @@ public class UserService {
 		}
 	}
 	
-	public String addHeart() {
-		return null;
-		// retrieve string of hearts 
-			// call the repo layer get by credentials using the header credentials with the Jwt
-		// append it to a the existing string of hearted values
+	@Transactional
+	public User getUserById(int id) {
+		return this.ur.getById(id);
+	}
+	
+	@Transactional
+	public User addHeart(User currentUser) {
+		return this.ur.updateUser(currentUser);
 	}
 
 }

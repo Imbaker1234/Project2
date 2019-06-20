@@ -47,7 +47,7 @@ public class ShowingRepository {
 		show.setShowId(updateShow.getShowId());
 		
 		// Return the updated card back
-		return updateShow;
+		return show;
 	}
 	
 	// Get all showings
