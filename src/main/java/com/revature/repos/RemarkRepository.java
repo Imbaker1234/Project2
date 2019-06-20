@@ -32,13 +32,14 @@ public class RemarkRepository {
 	}
 	
 	// Delete a remark
-	public boolean delete(int id) {
+	public boolean delete(int remarkId) {
 		
 		// Make a new session
 		Session session = factory.getCurrentSession();
 		
 		// Get the remark by the id from the data base
-		Remark toDelete = session.get(Remark.class, id);
+		Remark toDelete = session.get(Remark.class, remarkId);
+		System.out.println(toDelete);
 		
 		// Check to see if the retrieved remark existed
 		if (toDelete == null) return false;

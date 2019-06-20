@@ -32,7 +32,7 @@ public class Showing {
 	private int showId;
 	
 	@NonNull
-	@OneToOne(cascade=CascadeType.ALL)
+	@OneToOne
 	@JoinColumn(name="user_id")
 	private User showArtist;
 	

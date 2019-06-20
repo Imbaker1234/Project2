@@ -41,7 +41,7 @@ public class Remark {
 	private int remarkArtId;
 	
 	@NonNull
-	@OneToOne(cascade=CascadeType.ALL)
+	@OneToOne
 	@JoinColumn(name="user_id")
 	private User remarkAuthorId;
 	
