@@ -24,7 +24,6 @@ import com.revature.models.ShowErrorResponse;
 import com.revature.models.Showing;
 import com.revature.services.ShowingService;
 
-@CrossOrigin
 @RestController
 @RequestMapping("/show")
 public class ShowingController {

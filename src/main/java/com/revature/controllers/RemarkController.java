@@ -26,7 +26,6 @@ import com.revature.models.RemarkErrorResponse;
 import com.revature.models.UserErrorResponse;
 import com.revature.services.RemarkService;
 
-@CrossOrigin
 @RestController
 @RequestMapping("/remark")
 public class RemarkController {

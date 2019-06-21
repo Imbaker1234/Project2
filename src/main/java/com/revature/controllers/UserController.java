@@ -24,7 +24,6 @@ import com.revature.services.UserService;
 import com.revature.util.JwtConfig;
 import com.revature.util.JwtGenerator;
 
-@CrossOrigin
 @RestController
 @RequestMapping("/user")
 public class UserController {
