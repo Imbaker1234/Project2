@@ -1,6 +1,7 @@
 package com.revature.controllers;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -19,6 +20,8 @@ import com.revature.models.Principal;
 import com.revature.models.User;
 import com.revature.models.UserErrorResponse;
 import com.revature.services.UserService;
+import com.revature.util.JwtConfig;
+import com.revature.util.JwtGenerator;
 
 @RestController
 @RequestMapping("/user")
@@ -35,9 +38,18 @@ public class UserController {
 	@PostMapping(consumes=MediaType.APPLICATION_JSON_VALUE, produces=MediaType.APPLICATION_JSON_VALUE)
 	// changes the response status to 201
 	@ResponseStatus(HttpStatus.CREATED)
-	public User register(@RequestBody User newUser) {
-		System.out.println(newUser);
-		return us.register(newUser);		
+	public User register(@RequestBody User newUser, HttpServletResponse response) {
+		
+		// Create the new user
+		User reg = us.register(newUser);
+		
+		// Generate Jwt
+		String token = JwtGenerator.createJwt(reg);
+					
+		// Add the token into the response header
+		response.addHeader(JwtConfig.HEADER, JwtConfig.PREFIX + token);
+		
+		return reg;		
 	}
 	
 	// Add Heart
