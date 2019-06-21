@@ -20,7 +20,7 @@ import com.revature.services.UserService;
 import com.revature.util.JwtConfig;
 import com.revature.util.JwtGenerator;
 
-@CrossOrigin
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
 @RequestMapping("/auth")
 public class AuthController {
